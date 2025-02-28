@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "lovatolight";
+  src: url("./fonts/Lovato-Light-webfont.ttf");
+}
+@font-face {
+  font-family: "josefinslab";
+  src: url("./fonts/josefinslab-bold-webfont.ttf");
+  font-weight: bold;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: "lovatolight";
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}
+
+img {
+  width: 1em;
+  position: relative;
+  left: 3px;
+  top: 1.5px;
+  margin-right: 3px;
+}
+
+a {
+  color: rgb(170, 102, 102);
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:focus {
+  text-decoration: none;
+}
+a:active {
+  color: transparent;
+  text-shadow: 0px 0px 1px #f00, 0px 0px 2px #f00, 0px 0px 3px black, 0px 0px 4px black;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 500px;
+  padding: 20px;
+  border-top: 5px rgb(170, 102, 102) solid;
+  border-bottom: 5px rgb(170, 102, 102) solid;
+}
+@media screen and (max-width: 725px) {
+  header {
+    padding: 10px 25px;
+  }
+}
+header h1 {
+  text-align: center;
+  font-family: "josefinslab";
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 2px;
+  word-spacing: 0;
+  margin: 32px auto;
+}
+@media screen and (max-width: 950px) {
+  header h1 {
+    font-size: 44px;
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 725px) {
+  header h1 {
+    margin: 0px auto;
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.main-content h2 {
+  font-family: "josefinslab";
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  word-spacing: 0;
+  margin: 25px 0;
+}
+@media screen and (max-width: 725px) {
+  .main-content h2 {
+    margin: 20px 0 10px 0;
+  }
+}
+.main-content .section-and-aside {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+@media screen and (max-width: 950px) {
+  .main-content .section-and-aside {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 725px) {
+  .main-content .section-and-aside {
+    width: 100%;
+  }
+}
+.main-content .section-and-aside section {
+  width: 62.5%;
+  min-width: 500px;
+  line-height: 24px;
+  padding: 0 20px 20px 20px;
+}
+.main-content .section-and-aside section .first-paragraph {
+  text-indent: 20px;
+}
+.main-content .section-and-aside section .nowrap {
+  white-space: nowrap;
+}
+@media screen and (max-width: 950px) {
+  .main-content .section-and-aside section {
+    width: 100%;
+  }
+}
+.main-content .section-and-aside aside {
+  display: block;
+  width: 37.5%;
+  min-width: 250px;
+  padding: 0 20px 20px 20px;
+  line-height: 24px;
+}
+@media screen and (max-width: 950px) {
+  .main-content .section-and-aside aside {
+    width: 100%;
+  }
+}
+.main-content nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 20%;
+  min-width: 200px;
+  padding: 20px;
+}
+@media screen and (max-width: 725px) {
+  .main-content nav {
+    display: none;
+  }
+}
+.main-content nav ul {
+  width: 100%;
+  margin: 8px 0;
+  padding: 0;
+}
+.main-content nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 75px;
+  margin-bottom: 20px;
+  border: 1px rgb(170, 102, 102) solid;
+  cursor: pointer;
+}
+.main-content nav ul li:last-child {
+  margin-bottom: 0;
+}
+.main-content nav ul li:hover {
+  background-color: rgb(170, 102, 102);
+}
+.main-content nav ul li:active {
+  background-color: black;
+}
+.main-content nav ul li:has(a:focus) {
+  background-color: rgb(170, 102, 102);
+}
+.main-content nav ul li a {
+  font-size: 25px;
+  color: rgb(170, 102, 102);
+  text-decoration: none;
+}
+.main-content nav ul li a:focus {
+  color: white;
+}
+.main-content nav ul li:hover a {
+  color: white;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 500px;
+  padding: 20px;
+  border-top: 5px rgb(170, 102, 102) solid;
+  border-bottom: 5px rgb(170, 102, 102) solid;
+}
+footer p {
+  font-size: 16px;
+  line-height: 24px;
+}/*# sourceMappingURL=style.css.map */

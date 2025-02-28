@@ -1,0 +1,15 @@
+
+$section-min-width: 500px;
+$aside-min-width: 250px;
+$nav-min-width: 200px;
+
+$two-columns-width: $section-min-width + $aside-min-width + $nav-min-width;
+$one-column-width: $section-min-width + $nav-min-width + 25px;
+
+$primary-color: rgb(170, 102, 102);
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
