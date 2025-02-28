@@ -58,6 +58,7 @@ header {
 @media screen and (max-width: 725px) {
   header {
     padding: 10px 25px;
+    border-bottom: 0;
   }
 }
 header h1 {
@@ -86,6 +87,11 @@ header h1 {
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+@media screen and (max-width: 725px) {
+  .main-content {
+    flex-direction: column-reverse;
+  }
 }
 .main-content h2 {
   font-family: "josefinslab";
@@ -150,35 +156,59 @@ header h1 {
 }
 .main-content nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
   width: 20%;
   min-width: 200px;
   padding: 20px;
 }
 @media screen and (max-width: 725px) {
   .main-content nav {
-    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 500px;
+    padding: 0;
+    background-color: rgb(170, 102, 102);
   }
 }
 .main-content nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  margin: 8px 0;
+  margin: 0;
   padding: 0;
+}
+@media screen and (max-width: 725px) {
+  .main-content nav ul {
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
 }
 .main-content nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  line-height: 75px;
   margin-bottom: 20px;
   border: 1px rgb(170, 102, 102) solid;
   cursor: pointer;
 }
+@media screen and (max-width: 725px) {
+  .main-content nav ul li {
+    width: auto;
+    height: 40px;
+    margin: 0 15px 0 0;
+    padding: 0px;
+  }
+}
 .main-content nav ul li:last-child {
   margin-bottom: 0;
+}
+@media screen and (max-width: 725px) {
+  .main-content nav ul li:last-child {
+    margin-right: 0;
+  }
 }
 .main-content nav ul li:hover {
   background-color: rgb(170, 102, 102);
@@ -191,14 +221,26 @@ header h1 {
 }
 .main-content nav ul li a {
   font-size: 25px;
+  line-height: 75px;
   color: rgb(170, 102, 102);
   text-decoration: none;
+}
+@media screen and (max-width: 725px) {
+  .main-content nav ul li a {
+    color: white;
+    text-decoration: underline;
+  }
 }
 .main-content nav ul li a:focus {
   color: white;
 }
 .main-content nav ul li:hover a {
   color: white;
+}
+@media screen and (max-width: 725px) {
+  .main-content nav ul li:hover a {
+    color: black;
+  }
 }
 
 footer {

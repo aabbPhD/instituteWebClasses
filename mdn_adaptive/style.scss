@@ -65,6 +65,7 @@ header {
 
     @media screen and (max-width: vars.$one-column-width) {
         padding: 10px 25px;
+        border-bottom: 0;
     }
 
     h1 {
@@ -81,9 +82,7 @@ header {
             font-size: 44px;
             margin: 20px auto;
         }
-        @media screen and (max-width: vars.$one-column-width) {
-            margin: 0px auto;
-        }
+        @media screen and (max-width: vars.$one-column-width) { margin: 0px auto; }
     }
 }
 
@@ -92,6 +91,8 @@ header {
     display: flex;
     flex-direction: row;
     width: 100%;
+
+    @media screen and (max-width: vars.$one-column-width) { flex-direction: column-reverse; }
 
     h2 {
         font-family: 'josefinslab';
@@ -102,9 +103,7 @@ header {
         word-spacing: 0;
         margin: 25px 0;
 
-        @media screen and (max-width: vars.$one-column-width) {
-            margin: 20px 0 10px 0;
-        }
+        @media screen and (max-width: vars.$one-column-width) { margin: 20px 0 10px 0; }
     }
 
     .section-and-aside {
@@ -112,12 +111,8 @@ header {
         flex-direction: row;
         width: 80%;
 
-        @media screen and (max-width: vars.$two-columns-width) {
-            flex-direction: column;
-        }
-        @media screen and (max-width: vars.$one-column-width) {
-            width: 100%;
-        }
+        @media screen and (max-width: vars.$two-columns-width) { flex-direction: column; }
+        @media screen and (max-width: vars.$one-column-width) { width: 100%; }
 
         section {
             width: 50% / 80 * 100;
@@ -127,9 +122,7 @@ header {
             .first-paragraph { text-indent: 20px; }
             .nowrap { white-space: nowrap; }
     
-            @media screen and (max-width: vars.$two-columns-width) {
-                width: 100%;
-            }
+            @media screen and (max-width: vars.$two-columns-width) { width: 100%; }
         }
     
         aside {
@@ -138,57 +131,79 @@ header {
             min-width: vars.$aside-min-width;
             padding: 0 20px 20px 20px;
     
-            @media screen and (max-width: vars.$two-columns-width) {
-                width: 100%;
-            }
+            @media screen and (max-width: vars.$two-columns-width) { width: 100%; }
 
             h2 {
-                @media screen and (max-width: vars.$two-columns-width) {
-                    margin-top: 0;
-                }
+                @media screen and (max-width: vars.$two-columns-width) { margin-top: 0; }
             }
         }
     }
 
     nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
         width: 20%;
         min-width: vars.$nav-min-width;
         padding: 20px;
 
         @media screen and (max-width: vars.$one-column-width) {
-            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-width: vars.$section-min-width;
+            padding: 0;
+            background-color: vars.$primary-color;
         }
 
         ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            margin: 8px 0;
+            margin: 0;
             padding: 0;
+
+            @media screen and (max-width: vars.$one-column-width) {
+                flex-direction: row;
+                flex-flow: row wrap;
+                justify-content: space-around;
+            }
 
             li {
                 @include vars.flex-center;
                 width: 100%;
-                line-height: 75px;
                 margin-bottom: 20px;
                 border: 1px vars.$primary-color solid;
                 cursor: pointer;
 
-                &:last-child {margin-bottom: 0;}
+                @media screen and (max-width: vars.$one-column-width) {
+                    width: auto;
+                    height: 40px;
+                    margin: 0 15px 0 0;
+                    padding: 0px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                    @media screen and (max-width: vars.$one-column-width) { margin-right: 0; }
+                }
                 &:hover { background-color: vars.$primary-color; }
                 &:active { background-color: black; }
                 &:has(a:focus) { background-color: vars.$primary-color; }
 
                 a {
                     font-size: 25px;
+                    line-height: 75px;
                     color: vars.$primary-color;
                     text-decoration: none;
 
+                    @media screen and (max-width: vars.$one-column-width) { color: white; text-decoration: underline; }
+
                     &:focus { color: white; }
                 }
-                &:hover a { color: white; }
+                &:hover a { 
+                    color: white; 
+                    @media screen and (max-width: vars.$one-column-width) { color: black; }
+                }
             }
         }  
     }
