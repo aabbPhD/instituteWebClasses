@@ -20,6 +20,8 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     font-family: 'lovatolight';
+    font-size: 18px;
+    line-height: 28px;
     letter-spacing: 0.5px;
     word-spacing: 3px;
 }
@@ -70,6 +72,7 @@ header {
         font-family: 'josefinslab';
         font-weight: bold;
         font-size: 50px;
+        line-height: 1.2em;
         letter-spacing: 2px;
         word-spacing: 0;
         margin: 32px auto;
@@ -119,7 +122,6 @@ header {
         section {
             width: 50% / 80 * 100;
             min-width: vars.$section-min-width;
-            line-height: 24px;
             padding: 0 20px 20px 20px;
     
             .first-paragraph { text-indent: 20px; }
@@ -135,10 +137,15 @@ header {
             width: 30% / 80 * 100;
             min-width: vars.$aside-min-width;
             padding: 0 20px 20px 20px;
-            line-height: 24px;
     
             @media screen and (max-width: vars.$two-columns-width) {
                 width: 100%;
+            }
+
+            h2 {
+                @media screen and (max-width: vars.$two-columns-width) {
+                    margin-top: 0;
+                }
             }
         }
     }
@@ -196,9 +203,4 @@ footer {
     padding: 20px;
     border-top: 5px vars.$primary-color solid;
     border-bottom: 5px vars.$primary-color solid;
-
-    p {
-        font-size: 16px;
-        line-height: 24px;
-    }
 }
